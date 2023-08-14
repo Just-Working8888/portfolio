@@ -1,4 +1,4 @@
-name: Portfolio Workflow
+name: CI/CD Workflow
 
 on:
   push:
@@ -8,29 +8,28 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 14
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14
 
-      - name: Install dependencies
-        run: npm install
+    - name: Install dependencies
+      run: npm install
 
-      - name: Run tests
-        run: npm test
+    - name: Run tests
+      run: npm test
 
-      - name: Build
-        run: npm run build
+    - name: Build
+      run: npm run build
 
-      - name: Deploy to Vercel
-        uses: vercel/github-action@v21 # Use the appropriate version
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          org-id: your-vercel-org-id
-          project-id: your-vercel-project-id
+    - name: Deploy to Vercel
+      run: npx vercel --token ${{ secrets.VERCEL_TOKEN }} --prod
+      env:
+        VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
 # Add additional steps if necessary
