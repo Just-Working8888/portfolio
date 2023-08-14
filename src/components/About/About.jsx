@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import "./About.css";
-import images from "../../constants/images";
+
 import { about_stats } from "../../constants/data";
 import video from "../../assets/videos/video.mp4";
 import { FaPlay } from "react-icons/fa";
@@ -10,7 +10,7 @@ import { ImCancelCircle } from "react-icons/im";
 import { motion } from "framer-motion";
 const About = () => {
   const vidRef = useRef(null);
-  const about = useRef(null);
+
   const [toggleVideo, setToggleVideo] = useState(false);
   const playVideo = () => {
     setToggleVideo(!toggleVideo);

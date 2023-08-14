@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import "./Services.css";
 import { services } from "../../constants/data";
 import { motion } from "framer-motion";

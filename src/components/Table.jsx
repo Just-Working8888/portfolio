@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Table } from "antd";
-import axios from "axios";
+
 
 const MessageTable = ({ data, onDelete }) => {
   const [selectedMessage, setSelectedMessage] = useState(null);
-
+selectedMessage
   const columns = [
     {
       title: "Name",
@@ -39,7 +39,7 @@ const MessageTable = ({ data, onDelete }) => {
   ];
 
   return (
-    <>
+    <>{selectedMessage ? "ddd" : 'dsds'}
       <Table
         columns={columns}
         dataSource={data}

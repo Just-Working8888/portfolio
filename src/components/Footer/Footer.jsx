@@ -1,15 +1,6 @@
 import React, { useRef } from "react";
 import "./Footer.css";
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaInstagram,
-  FaPinterest,
-  FaBehance,
-  FaTelegram,
-  FaPhoenixSquadron,
-  FaPhone,
-} from "react-icons/fa";
+import { FaInstagram, FaTelegram } from "react-icons/fa";
 import { motion } from "framer-motion";
 const Footer = () => {
   const imageAnimation = {

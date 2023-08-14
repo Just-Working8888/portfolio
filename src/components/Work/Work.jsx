@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, {  useState } from "react";
 import { works } from "../../constants/data";
 import "./Work.css";
 import { BsPlusLg } from "react-icons/bs";

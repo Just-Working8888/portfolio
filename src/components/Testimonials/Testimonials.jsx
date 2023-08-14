@@ -1,21 +1,13 @@
 import React from 'react';
 import "./Testimonials.css";
-import { testimonials } from '../../constants/data';
+
 // import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {logos} from "../../constants/data";
 
 const Testimonials = () => {
-    var settings = {
-        dots: true,
-        infinite: true,
-        autoplay: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false
-      };
+
 
   return (
     <div className='testimonials section-p'>
