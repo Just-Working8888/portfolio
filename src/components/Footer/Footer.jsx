@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import "./Footer.css";
 import { FaInstagram, FaTelegram } from "react-icons/fa";
 import { motion } from "framer-motion";
