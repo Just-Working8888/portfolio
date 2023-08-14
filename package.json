@@ -6,6 +6,7 @@
     "@testing-library/user-event": "^13.5.0",
     "antd": "^5.7.3",
     "framer-motion": "^10.15.1",
+    "matchmedia-polyfill": "^0.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
@@ -41,8 +42,10 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@testing-library/jest-dom": "^6.0.0",
     "@testing-library/react": "^14.0.0",
-    "axios": "^1.4.0"
+    "axios": "^1.4.0",
+    "mq-polyfill": "^1.1.8"
   }
 }
