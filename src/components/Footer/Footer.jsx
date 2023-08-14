@@ -50,9 +50,9 @@ const Footer = () => {
               </a>
             </motion.li>
             <motion.li variants={imageAnimation} custom={3}>
-              <a href="" className="text-white">
+         
                 +996 772 21 84 66
-              </a>
+            
             </motion.li>
             {/* <li>
                         <a href = "/" className='text-white'>
