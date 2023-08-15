@@ -13,13 +13,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: "Build application"
-    
+
     steps:
       - uses: actions/checkout@v2
 
       - uses: actions/setup-node@v1
         with:
-          node-version: '14'
+          node-version: "14"
           registry-url: https://registry.npmjs.org/
 
       - name: "Install Dependencies"
@@ -28,17 +28,20 @@ jobs:
   test:
     runs-on: ubuntu-latest
     name: "Run tests"
-    
+
     steps:
       - uses: actions/checkout@v2
 
       - uses: actions/setup-node@v1
         with:
-          node-version: '14'
+          node-version: "14"
           registry-url: https://registry.npmjs.org/
 
-      - name: "Run tests"
-        run: npm test
+      - name: "Add node_modules/.bin to PATH"
+        run: export PATH="${PATH}:$(yarn bin)"
+
+      - name: Run tests
+        run: CI=true npm test
 
   deploy:
     runs-on: ubuntu-latest
@@ -49,7 +52,7 @@ jobs:
 
       - uses: actions/setup-node@v1
         with:
-          node-version: '14'
+          node-version: "14"
           registry-url: https://registry.npmjs.org/
 
       - name: "Deploy application"
@@ -60,6 +63,6 @@ jobs:
           fi
 
           npx vercel --token nv0lSHeRRVtZ0Xr3i2a0Sqkf $prodRun --yes
-          
+
     env:
       VERCEL_TOKEN: nv0lSHeRRVtZ0Xr3i2a0Sqkf
