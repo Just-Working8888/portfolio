@@ -65,7 +65,7 @@ const Header = () => {
               duration={500}
             >
               <motion.button  variants={textAnimation} custom={1} type="button" className="btn-item bg-dark fw-4 ls-2">
-                Contact
+                Contact me
               </motion.button>
             </Link>
           </div>
