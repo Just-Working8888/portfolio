@@ -1,33 +1,37 @@
 name: "Deploy CI"
- 
+
 on:
- release:
-   types:
-     - published
- push:
-   branches:
-     - main
- workflow_dispatch:
- 
+  release:
+    types:
+      - published
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
 jobs:
- vercel:
-   runs-on: ubuntu-latest
-   name: "Deploy application"
-  
-   steps:
-     - uses: actions/checkout@v2
-     - uses: actions/setup-node@v1
-       with:
-         node-version: '14'
-         registry-url: https://registry.npmjs.org/
- 
-     - name: "Deploy application"
-       run: |
-         prodRun=""
-         if [[ ${GITHUB_REF} == "refs/heads/main" ]]; then
-           prodRun="--prod"
-         fi
- 
-         npx vercel --token nv0lSHeRRVtZ0Xr3i2a0Sqkf $prodRun --yes
-       env:
-         VERCEL_TOKEN: nv0lSHeRRVtZ0Xr3i2a0Sqkf
+  vercel:
+    runs-on: ubuntu-latest
+    name: "Deploy application"
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+          registry-url: https://registry.npmjs.org/
+
+      - name: "Run tests"
+        run: npm test
+
+      - name: "Deploy application"
+        run: |
+          prodRun=""
+          if [[ ${GITHUB_REF} == "refs/heads/main" ]]; then
+            prodRun="--prod"
+          fi
+
+          npx vercel --token nv0lSHeRRVtZ0Xr3i2a0Sqkf $prodRun --yes
+        env:
+          VERCEL_TOKEN: nv0lSHeRRVtZ0Xr3i2a0Sqkf
