@@ -10,10 +10,25 @@ on:
   workflow_dispatch:
 
 jobs:
-  vercel:
+  build:
     runs-on: ubuntu-latest
-    name: "Deploy application"
+    name: "Build application"
+    
+    steps:
+      - uses: actions/checkout@v2
 
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+          registry-url: https://registry.npmjs.org/
+
+      - name: "Install Dependencies"
+        run: npm install
+
+  test:
+    runs-on: ubuntu-latest
+    name: "Run tests"
+    
     steps:
       - uses: actions/checkout@v2
 
@@ -25,6 +40,18 @@ jobs:
       - name: "Run tests"
         run: npm test
 
+  deploy:
+    runs-on: ubuntu-latest
+    name: "Deploy application"
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+          registry-url: https://registry.npmjs.org/
+
       - name: "Deploy application"
         run: |
           prodRun=""
@@ -33,5 +60,6 @@ jobs:
           fi
 
           npx vercel --token nv0lSHeRRVtZ0Xr3i2a0Sqkf $prodRun --yes
-        env:
-          VERCEL_TOKEN: nv0lSHeRRVtZ0Xr3i2a0Sqkf
+          
+    env:
+      VERCEL_TOKEN: nv0lSHeRRVtZ0Xr3i2a0Sqkf
