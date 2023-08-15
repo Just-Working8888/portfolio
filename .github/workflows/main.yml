@@ -1,33 +1,33 @@
-name: CI/CD Workflow
-
+name: "Deploy CI"
+ 
 on:
-  push:
-    branches:
-      - main
-
+ release:
+   types:
+     - published
+ push:
+   branches:
+     - main
+ workflow_dispatch:
+ 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: 14
-
-    - name: Install dependencies
-      run: npm install
-
-    - name: Run tests
-      run: npm test
-
-    - name: Build
-      run: npm run build
-
-    - name: Deploy to Vercel
-      run: npx vercel --prod --yes
-      
-# Add additional steps if necessary
+ vercel:
+   runs-on: ubuntu-latest
+   name: "Deploy application"
+  
+   steps:
+     - uses: actions/checkout@v2
+     - uses: actions/setup-node@v1
+       with:
+         node-version: '14'
+         registry-url: https://registry.npmjs.org/
+ 
+     - name: "Deploy application"
+       run: |
+         prodRun=""
+         if [[ ${GITHUB_REF} == "refs/heads/main" ]]; then
+           prodRun="--prod"
+         fi
+ 
+         npx vercel --token ${VERCEL_TOKEN} $prodRun
+       env:
+         VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
