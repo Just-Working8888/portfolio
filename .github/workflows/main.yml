@@ -12,36 +12,23 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: "Build application"
-
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v1
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
         with:
-          node-version: "14"
-          registry-url: https://registry.npmjs.org/
+          node-version: 14
 
-      - name: "Install Dependencies"
+      - name: Install dependencies
         run: npm install
 
-  test:
-    runs-on: ubuntu-latest
-    name: "Run tests"
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - uses: actions/setup-node@v1
-        with:
-          node-version: "14"
-          registry-url: https://registry.npmjs.org/
-
-      - name: "Add node_modules/.bin to PATH"
-        run: export PATH="${PATH}:$(yarn bin)"
-
       - name: Run tests
-        run: CI=true npm test
+        run: npm test
+
+      - name: Build
+        run: npm run build
 
   deploy:
     runs-on: ubuntu-latest
