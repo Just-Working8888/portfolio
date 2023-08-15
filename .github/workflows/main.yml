@@ -28,7 +28,7 @@ jobs:
       run: npm run build
 
     - name: Deploy to Vercel
-      run: npx vercel --token prj_AX6hvbUXJvW3zJooxY07V3n4SLAM --prod --confirm
+      run: npx vercel --token prj_AX6hvbUXJvW3zJooxY07V3n4SLAM --prod --yes
       env:
         VERCEL_TOKEN: prj_AX6hvbUXJvW3zJooxY07V3n4SLAM
 
