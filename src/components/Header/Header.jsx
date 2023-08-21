@@ -39,8 +39,8 @@ const Header = () => {
             variants={textAnimation}
             className="text-white fw-6 header-title"
           >
-            Hello, I'm <span className="text-brown">Web - Devolper</span> living
-            in Osh, Kyrgistan
+            Hello, I'm <span className="text-brown">Web - Developer</span> living
+            in Osh, Kyrgyzstan
           </motion.h1>
           <div className="btn-groups flex">
             <Link

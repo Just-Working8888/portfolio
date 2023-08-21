@@ -25,6 +25,7 @@
 }
 .nav-item{
     margin-bottom: 2rem;
+cursor: pointer;    
 }
 .nav-link{
     position: relative;
