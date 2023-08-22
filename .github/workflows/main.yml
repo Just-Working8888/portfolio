@@ -1,55 +1,22 @@
-name: "Deploy CI"
-
+name: Vercel Preview Deployment
+env:
+  VERCEL_ORG_ID: team_Tn5OjGGBUZtKuxEDb6Nik6zm
+  VERCEL_PROJECT_ID: prj_eUyn4DpMgcIAuSSDP0KTrG84vVO6
 on:
-  release:
-    types:
-      - published
   push:
-    branches:
+    branches-ignore:
       - main
-  workflow_dispatch:
-
 jobs:
-  build:
+  Deploy-Preview:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 14
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run tests
-        run: npm test
-
-      - name: Build
-        run: npm run build
-
-  deploy:
-    runs-on: ubuntu-latest
-    name: "Deploy application"
-
     steps:
       - uses: actions/checkout@v2
-
-      - uses: actions/setup-node@v1
-        with:
-          node-version: "14"
-          registry-url: https://registry.npmjs.org/
-
-      - name: "Deploy application"
-        run: |
-          prodRun=""
-          if [[ ${GITHUB_REF} == "refs/heads/main" ]]; then
-            prodRun="--prod"
-          fi
-
-          npx vercel --token nv0lSHeRRVtZ0Xr3i2a0Sqkf $prodRun --yes
-
-    env:
-      VERCEL_TOKEN: nv0lSHeRRVtZ0Xr3i2a0Sqkf
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+      - name: Pull Vercel Environment Information
+        run: vercel pull --yes --environment=preview --token=nv0lSHeRRVtZ0Xr3i2a0Sqkf
+      - name: Build Project Artifacts
+        run: vercel build --token=nv0lSHeRRVtZ0Xr3i2a0Sqkf
+      - name: Deploy Project Artifacts to Vercel
+        run: vercel deploy --prebuilt --token=nv0lSHeRRVtZ0Xr3i2a0Sqkf
+      
