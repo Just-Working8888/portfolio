@@ -47,7 +47,7 @@ const Navbar = () => {
                     to="/"
                     className="nav-link text-white ls-1 text-uppercase fw-6 fs-22"
                   >
-                    Home
+                    Main
                   </Link>
                 </li>
                 <li className="nav-item">
