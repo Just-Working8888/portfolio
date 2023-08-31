@@ -213,12 +213,12 @@ const logos = [
     image:
       "https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png",
   },
-  // {
-  //   id: 6,
-  //   name: "Nginx",
-  //   image:
-  //     "https://cdn.iconscout.com/icon/free/png-256/free-nginx-3628948-3030173.png",
-  // },
+  {
+    id: 6,
+    name: "Nginx",
+    image:
+      "https://www.mabl.com/hubfs/CICDBlog.png",
+  },
   {
     id: 7,
     name: "Sass",
