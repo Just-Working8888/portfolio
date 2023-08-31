@@ -1,5 +1,5 @@
 import images from "./images";
-
+import cardgo from "../1.png";
 const services = [
   {
     image: `${images.services_img_1}`,
@@ -95,22 +95,29 @@ const works = [
     image: "https://i.ibb.co/yF9WnPR/2023-07-13-13-52-19.png",
     disp: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus itaque velit similique eum id delectus minima! Corrupti ea earum itaque saepe. Doloremque, officiis amet. Deserunt laborum culpa sit reiciendis! Perspiciatis!",
   },
-  // {
-  //   id: 9,
-  //   name: "Amazing Landing",
-  //   image: "https://i.ibb.co/PM2wnnP/2023-07-13-13-51-23png",
-  //   disp: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus itaque velit similique eum id delectus minima! Corrupti ea earum itaque saepe. Doloremque, officiis amet. Deserunt laborum culpa sit reiciendis! Perspiciatis!",
-  // },
-  // {
-  //   id: 10,
-  //   name: "Dashboard",
-  //   image: "https://i.ibb.co/SPzZR6h/2023-07-13-14-01-24.png",
-  //   disp: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus itaque velit similique eum id delectus minima! Corrupti ea earum itaque saepe. Doloremque, officiis amet. Deserunt laborum culpa sit reiciendis! Perspiciatis!",
-  // },
+  {
+    id: 9,
+    name: "Amazing Landing",
+    image: cardgo,
+    disp: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus itaque velit similique eum id delectus minima! Corrupti ea earum itaque saepe. Doloremque, officiis amet. Deserunt laborum culpa sit reiciendis! Perspiciatis!",
+  },
+  {
+    id: 10,
+    name: "Dashboard",
+    image:
+      "https://hhcdn.ru/photo/733380884.png?t=1693580311&h=Bh3D4KgzFChgstMvDL31xw",
+    disp: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus itaque velit similique eum id delectus minima! Corrupti ea earum itaque saepe. Doloremque, officiis amet. Deserunt laborum culpa sit reiciendis! Perspiciatis!",
+  },
   {
     id: 11,
     name: "Landing And",
     image: "https://i.ibb.co/XSZZ2dB/2023-07-13-14-10-05.png",
+    disp: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus itaque velit similique eum id delectus minima! Corrupti ea earum itaque saepe. Doloremque, officiis amet. Deserunt laborum culpa sit reiciendis! Perspiciatis!",
+  },
+  {
+    id: 12,
+    name: "Landing And",
+    image: "https://reactjsexample.com/content/images/2022/07/56e2e706e67.png",
     disp: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus itaque velit similique eum id delectus minima! Corrupti ea earum itaque saepe. Doloremque, officiis amet. Deserunt laborum culpa sit reiciendis! Perspiciatis!",
   },
 ];
@@ -206,12 +213,12 @@ const logos = [
     image:
       "https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png",
   },
-  {
-    id: 6,
-    name: "Nginx",
-    image:
-      "https://cdn.iconscout.com/icon/free/png-256/free-nginx-3628948-3030173.png",
-  },
+  // {
+  //   id: 6,
+  //   name: "Nginx",
+  //   image:
+  //     "https://cdn.iconscout.com/icon/free/png-256/free-nginx-3628948-3030173.png",
+  // },
   {
     id: 7,
     name: "Sass",
@@ -239,29 +246,29 @@ const logos = [
     name: "PHP",
     image: "https://www.svgrepo.com/show/452088/php.svg",
   },
-  {
-    id: 12,
-    name: "GO",
-    image:
-      "https://static4.tgstat.ru/channels/_0/de/defd45f83df9a62166df4bdbd0a1ce2b.jpg",
-  },
+  // {
+  //   id: 12,
+  //   name: "GO",
+  //   image:
+  //     "https://static4.tgstat.ru/channels/_0/de/defd45f83df9a62166df4bdbd0a1ce2b.jpg",
+  // },
   {
     id: 13,
     name: "Redux-Toolkit",
     image:
       "https://img.uxwing.com/wp-content/themes/uxwing/download/brands-social-media/redux-icon.png",
   },
-  {
-    id: 14,
-    name: "Pithon",
-    image:
-      "https://static-00.iconduck.com/assets.00/python-icon-512x512-48og66bp.png",
-  },
-  {
-    id: 15,
-    name: "django",
-    image: "https://www.svgrepo.com/show/353657/django-icon.svg",
-  },
+  // {
+  //   id: 14,
+  //   name: "Pithon",
+  //   image:
+  //     "https://static-00.iconduck.com/assets.00/python-icon-512x512-48og66bp.png",
+  // },
+  // {
+  //   id: 15,
+  //   name: "django",
+  //   image: "https://www.svgrepo.com/show/353657/django-icon.svg",
+  // },
   {
     id: 16,
     name: "Git",
