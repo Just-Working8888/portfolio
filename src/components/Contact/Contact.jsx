@@ -140,7 +140,7 @@ const Contact = () => {
               ]}
             />
           )}
-        </form>fdsfds
+        </form>
       </div>
     </motion.div>
   );
