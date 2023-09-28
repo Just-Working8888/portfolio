@@ -32,7 +32,7 @@ const Header = () => {
             variants={textAnimation}
             className="text-uppercase text-white op-07 fw-6 ls-2"
           >
-            web Front-end, devolper
+             Front-end, devolper
           </motion.h2>
           <motion.h1
           custom={1}
